@@ -19,9 +19,6 @@ gem 'uglifier', '>= 1.3.0'
 # Grape for API-only application
 gem 'grape', '~> 1.0', '>= 1.0.3'
 gem 'grape-entity', '~> 0.7.1'
-gem 'grape-swagger', '~> 0.29.0'
-gem 'grape-swagger-entity', '~> 0.2.5'
-gem 'grape-swagger-rails', '~> 0.3.0'
 
 # Devise
 gem 'devise', '~> 4.4', '>= 4.4.3'
