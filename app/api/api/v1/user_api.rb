@@ -4,7 +4,7 @@ module API
       resources :user do
         get 'profile' do
           authenticate_token
-          current_user
+          present current_user, with: Entities::UserEntity
         end
 
         params do
@@ -36,6 +36,12 @@ module API
         end
         post 'sign_up' do
           User.create!(declared(params))
+        end
+
+        delete 'sign_out' do
+          authenticate_token
+          current_user.destroy_token
+          present({ status: "ok" }, 200)
         end
       end
     end
