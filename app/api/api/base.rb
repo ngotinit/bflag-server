@@ -1,8 +1,8 @@
 module API
   class Base < Grape::API
-    format :json
     prefix :api
+    format :json
 
-    mount V1::UserAPI
+    mount API::V1::Base
   end
 end
