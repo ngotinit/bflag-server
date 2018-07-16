@@ -17,6 +17,18 @@ class User < ApplicationRecord
     end
   end
 
+  def self.search(term)
+    if term
+      where('username LIKE :search OR
+            email LIKE :search OR
+            first_name LIKE :search OR
+            last_name LIKE :search',
+            search: "%#{term}%")
+    else
+      all
+    end
+  end
+
   def generate_token
     loop do
       self.auth_token = new_token

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # API Endpoints
   mount API::Base => '/'
+
+  # CMS
+  namespace :admin do
+    root to: 'sessions#new'
+    get '/login', to: 'sessions#new'
+    post '/', to: 'sessions#create'
+    delete '/', to: 'sessions#destroy'
+
+    resources :users
+  end
 end

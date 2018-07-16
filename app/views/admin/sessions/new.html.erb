@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="form-shadow">
+    <%= simple_form_for(:session, url: admin_path) do |f| %>
+      <%= f.input :username, required: false %>
+      <%= f.input :password, required: false %>
+
+      <div class="form-actions">
+        <%= f.button :submit, 'Log in', class: 'btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

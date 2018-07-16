@@ -1,0 +1,12 @@
+.form-shadow {
+  width: 40%;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid grey;
+  box-shadow: 0 0 5px grey;
+  
+  .btn {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
