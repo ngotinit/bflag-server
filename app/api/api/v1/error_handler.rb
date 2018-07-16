@@ -4,15 +4,15 @@ module API
       extend ActiveSupport::Concern
       included do
         rescue_from ActiveRecord::RecordNotFound do |e|
-          error!({ error_message: e.message }, 404)
+          error!(e, 404)
         end
 
         rescue_from ActiveRecord::RecordInvalid do |e|
-          error!({ error_message: e.message }, 422)
+          error!(e, 422)
         end
 
         rescue_from :all do |e|
-          error!({ error_message: e.message }, 400)
+          error!(e, 500)
         end
       end
     end

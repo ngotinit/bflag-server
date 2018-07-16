@@ -15,16 +15,14 @@ module API
           declared_params = declared(params)
           user = User.find_by(email: declared_params[:email])
 
-          if user.nil?
-            raise ActiveRecord::RecordNotFound 'Email not found'
-          end
+          raise ActiveRecord::RecordNotFound 'Email not found' if user.nil?
 
           unless user.valid_password?(declared_params[:password])
-            error!({ error_message: 'Incorrect password' }, :unauthorized)
+            error!('Incorrect password', 401)
           end
 
           user.generate_token
-          present({ status: 'ok', token: user.auth_token }, :success)
+          present({ status: 'ok', token: user.auth_token }, 200)
         end
 
         params do
@@ -36,6 +34,7 @@ module API
         end
         post 'sign_up' do
           User.create!(declared(params))
+          present({ status: 'ok' }, 200)
         end
 
         params do
@@ -51,7 +50,7 @@ module API
         delete 'sign_out' do
           authenticate_token
           current_user.destroy_token
-          present({ status: "ok" }, 200)
+          present({ status: 'ok' }, 200)
         end
       end
     end
