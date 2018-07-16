@@ -1,15 +1,13 @@
 module API
   module V1
     module Helper
-      def authenticate_token
-        if headers['Authentication-Token'].nil?
-          error!({ "error_message": "Token not found" }, 404)
-        end
-        error!("Token invalid", 401) unless current_user
+      def authenticate_token!
+        error!('401 Token not found', 401) if headers['Token'].nil?
+        error!('401 Token invalid', 401) unless current_user
       end
 
       def current_user
-        @current_user ||= User.get_user_from_token(headers['Authentication-Token'])
+        @current_user ||= User.get_user_from_token(headers['Token'])
       end
     end
   end

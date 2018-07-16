@@ -2,8 +2,8 @@ module API
   module V1
     class UserAPI < Grape::API
       resources :user do
-        get 'profile' do
-          authenticate_token
+        get do
+          authenticate_token!
           present current_user, with: Entities::UserEntity
         end
 
@@ -36,6 +36,16 @@ module API
         end
         post 'sign_up' do
           User.create!(declared(params))
+        end
+
+        params do
+          optional :first_name, type: String
+          optional :last_name, type: String
+          optional :username, type: String
+        end
+        put 'edit' do
+          current_user.update!(declared(params, include_missing: false))
+          present current_user, with: Entities::UserEntity
         end
 
         delete 'sign_out' do
