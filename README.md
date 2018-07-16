@@ -39,11 +39,23 @@ Return the information of user as GET /api/v1/user
 ### DELETE /api/v1/user/sign_out
 
 Require header: __Token__
+
 Response:
 { "status": "ok" }
 
+### GET /api/v1/user
+
+Response:
+    {
+        "email": "useremail@example.com",
+        "username": "exampleuser",
+        "full_name": "example full name"
+    }
+
 ### Note on Token
+
 For API calls that requires Token, if the token is not found in header, the following message is returned:
 * { "error": "401 Token not found" }
+
 If the token is invalid, following message is returned:
 * { "error": "401 Token invalid" }
