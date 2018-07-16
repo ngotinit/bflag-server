@@ -27,6 +27,7 @@ Attach it in the header of request, under the key 'Token'
 ### PUT /api/v1/user/edit
 
 Require header: __Token__
+
 Optional fields: __first_name__, __last_name__, __username__
 
 Response: one of following
@@ -43,6 +44,6 @@ Response:
 
 ### Note on Token
 For API calls that requires Token, if the token is not found in header, the following message is returned:
-{ "error": "401 Token not found" }
+* { "error": "401 Token not found" }
 If the token is invalid, following message is returned:
-{ "error": "401 Token invalid" }
+* { "error": "401 Token invalid" }
