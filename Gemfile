@@ -19,6 +19,9 @@ gem 'uglifier', '>= 1.3.0'
 # Grape for API-only application
 gem 'grape', '~> 1.0', '>= 1.0.3'
 gem 'grape-entity', '~> 0.7.1'
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
+gem 'rack-cors', require: 'rack/cors'
 
 # Devise
 gem 'devise', '~> 4.4', '>= 4.4.3'

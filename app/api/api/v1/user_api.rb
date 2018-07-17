@@ -1,6 +1,7 @@
 module API
   module V1
     class UserAPI < Grape::API
+      desc 'API for user'
       resources :user do
         get do
           authenticate_token!

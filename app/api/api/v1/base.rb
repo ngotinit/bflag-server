@@ -9,6 +9,8 @@ module API
       end
 
       mount API::V1::UserAPI
+
+      add_swagger_documentation
     end
   end
 end
