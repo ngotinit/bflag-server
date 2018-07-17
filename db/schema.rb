@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_07_16_062535) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string "username"
     t.string "password"
@@ -23,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_07_16_062535) do
     t.string "first_name"
     t.string "last_name"
     t.string "username"
+    t.string "auth_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -34,8 +38,6 @@ ActiveRecord::Schema.define(version: 2018_07_16_062535) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "auth_token"
-    t.datetime "auth_token_expire"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
