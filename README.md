@@ -7,6 +7,7 @@
 Require fields: __email__, __username__, __first_name__, __last_name__, __password__
 
 Response:
+
 * If successful:
 { "status": "ok" }
 * If failure:
@@ -17,6 +18,7 @@ Response:
 Require fields: __email__, __password__
 
 Response: one of following
+
 * { "error": "Email not found" }
 * { "error": "Incorrect password" }
 * { "status": "ok", "token": __your_authentication_token__ }
@@ -31,9 +33,10 @@ Require header: __Token__
 Optional fields: __first_name__, __last_name__, __username__
 
 Response: one of following
-* If successful
-Return the information of user as GET /api/v1/user
-* If failure
+
+* If successful:
+return the information of user as GET /api/v1/user
+* If failure:
 { "error": __some_arbitrary_mesage__ }
 
 ### DELETE /api/v1/user/sign_out
@@ -46,6 +49,7 @@ Response:
 ### GET /api/v1/user
 
 Response:
+
     {
         "email": "useremail@example.com",
         "username": "exampleuser",
@@ -55,7 +59,9 @@ Response:
 ### Note on Token
 
 For API calls that requires Token, if the token is not found in header, the following message is returned:
+
 * { "error": "401 Token not found" }
 
 If the token is invalid, following message is returned:
+
 * { "error": "401 Token invalid" }
