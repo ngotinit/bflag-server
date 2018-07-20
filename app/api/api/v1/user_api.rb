@@ -3,6 +3,14 @@ module API
     class UserAPI < Grape::API
       desc 'API for user'
       resources :user do
+        desc "Get user's information", {
+          headers: {
+            "Token" => {
+              description: "Validates your identity",
+              required: true
+            }
+          }
+        }
         get do
           authenticate_token!
           present current_user, with: Entities::UserEntity
@@ -38,18 +46,35 @@ module API
           present({ status: 'ok' }, 200)
         end
 
+        desc "Edit user's profile", {
+          headers: {
+            "Token" => {
+              description: "Validates your identity",
+              required: true
+            }
+          }
+        }
         params do
           optional :first_name, type: String
           optional :last_name, type: String
           optional :username, type: String
         end
         put 'edit' do
+          authenticate_token!
           current_user.update!(declared(params, include_missing: false))
           present current_user, with: Entities::UserEntity
         end
 
+        desc "Log user out", {
+          headers: {
+            "Token" => {
+              description: "Validates your identity",
+              required: true
+            }
+          }
+        }
         delete 'sign_out' do
-          authenticate_token
+          authenticate_token!
           current_user.destroy_token
           present({ status: 'ok' }, 200)
         end
