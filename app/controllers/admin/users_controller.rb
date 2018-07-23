@@ -3,7 +3,9 @@ class Admin::UsersController < ApplicationController
   before_action :set_user, only: %i[show destroy]
 
   def index
-    @users = User.search(params[:search]).order('id')
+   # @users = User.search(params[:search]).order('id')
+    @users = User.page(params[:page]).per(3)
+
   end
   def new
    @user=User.new
