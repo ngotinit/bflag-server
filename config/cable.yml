@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") %>
+  url: <%= ENV.fetch("REDIS_URL") {"redis://pedd46bcdaf5b091306cbca3ff26ea7e2bce47e3be03fb3f18a0666e815b3cb93@ec2-54-175-222-130.compute-1.amazonaws.com"}%>
   channel_prefix: bflag_production

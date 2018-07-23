@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  # API Endpoints
-  mount API::Base => '/'
-
-  # Action Cable
-  mount ActionCable.server => '/cable'
-
-  # API Documentation
-  mount GrapeSwaggerRails::Engine => '/swagger'
-
   # CMS
   namespace :admin do
     root to: 'sessions#new'
@@ -17,4 +8,13 @@ Rails.application.routes.draw do
 
     resources :users # only: %i[index show destroy]
   end
+
+  # API Endpoints
+  mount API::Base => '/'
+
+  # API Documentation
+  mount GrapeSwaggerRails::Engine => '/swagger'
+
+  # Action Cable
+  mount ActionCable.server => '/cable'
 end
