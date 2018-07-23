@@ -15,10 +15,6 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
     delete '/', to: 'sessions#destroy'
 
-    resources :users, only: %i[index show destroy]
-
-    devise_for :users, skip: :sessions, controllers: {
-      registrations: 'admin/users/registrations'
-    }
+    resources :users # only: %i[index show destroy]
   end
 end
