@@ -9,6 +9,7 @@ module API
       end
 
       mount API::V1::UserAPI
+      mount API::V1::RoomAPI
     end
   end
 end
