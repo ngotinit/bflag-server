@@ -3,16 +3,19 @@ class Admin::UsersController < ApplicationController
   before_action :set_user, only: %i[show destroy]
 
   def index
-   # @users = User.search(params[:search]).order('id')
+    # @users = User.search(params[:search]).order('id')
     @users = User.page(params[:page]).per(3)
 
   end
+
   def new
    @user=User.new
   end
+
   def edit
      @user=User.find(params[:id])
   end
+
   def update
      @user=User.find(params[:id])
    if@user.update(user_params)
@@ -20,7 +23,9 @@ class Admin::UsersController < ApplicationController
    else
       render 'edit'
    end
+
   end
+
   def create
     @user= User.create(user_params)
     if @user.save
@@ -29,6 +34,7 @@ class Admin::UsersController < ApplicationController
       render 'new'
     end
   end
+
   def show
       @user=User.find(params[:id])
    end
