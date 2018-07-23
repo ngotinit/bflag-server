@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
 
   def index
    # @users = User.search(params[:search]).order('id')
-    @users = User.order(:id).page(params[:page]).per(3)
+    @users = User.page(params[:page]).per(3)
 
   end
   def new
