@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # API Endpoints
   mount API::Base => '/'
 
+  # Action Cable
+  mount ActionCable.server => '/cable'
+
   # API Documentation
   mount GrapeSwaggerRails::Engine => '/swagger'
 
@@ -15,8 +18,7 @@ Rails.application.routes.draw do
     resources :users, only: %i[index show destroy]
 
     devise_for :users, skip: :sessions, controllers: {
-      registrations: 'admin/users/registrations',
-      passwords: 'admin/users/passwords'
+      registrations: 'admin/users/registrations'
     }
   end
 end

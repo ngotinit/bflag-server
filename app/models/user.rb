@@ -8,6 +8,8 @@ class User < ApplicationRecord
             length: { minimum: 6 },
             uniqueness: { case_sensitive: false }
 
+  has_many :messages
+
   def self.get_user_from_token(token)
     User.find_by(auth_token: token)
   end
