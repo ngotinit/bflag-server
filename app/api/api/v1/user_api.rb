@@ -5,8 +5,8 @@ module API
       resources :user do
         desc "Get user's information", {
           headers: {
-            "Token" => {
-              description: "Validates your identity",
+            'Token' => {
+              description: 'Validates your identity',
               required: true
             }
           }
@@ -48,8 +48,8 @@ module API
 
         desc "Edit user's profile", {
           headers: {
-            "Token" => {
-              description: "Validates your identity",
+            'Token' => {
+              description: 'Validates your identity',
               required: true
             }
           }
@@ -67,8 +67,8 @@ module API
 
         desc "Log user out", {
           headers: {
-            "Token" => {
-              description: "Validates your identity",
+            'Token' => {
+              description: 'Validates your identity',
               required: true
             }
           }

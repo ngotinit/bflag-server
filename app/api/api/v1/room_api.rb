@@ -7,8 +7,8 @@ module API
 
       desc 'API for getting list of rooms', {
         headers: {
-          "Token" => {
-            description: "Validates your identity",
+          'Token' => {
+            description: 'Validates your identity',
             required: true
           }
         }
