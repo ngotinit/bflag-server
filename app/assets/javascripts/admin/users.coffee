@@ -14,4 +14,7 @@ $ ->
       {data: 'email'}
       {data: 'first_name'}
       {data: 'last_name'}
+      {data: 'show'}
+      {data: 'edit'}
+      {data: 'delete'}
     ]
