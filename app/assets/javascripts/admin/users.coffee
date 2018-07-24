@@ -6,6 +6,7 @@ $ ->
   $('#users-datatable').dataTable
     processing: true
     serverSide: true
+    scrollX: true
     ajax: $('#users-datatable').data('source')
     pagingType: 'full_numbers'
     columns: [

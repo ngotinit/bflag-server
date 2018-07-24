@@ -3,7 +3,7 @@
       <%= link_to "Create", new_admin_user_path, class:"btn btn-info", id: "spacing2"%>
   </div>
 
-  <table class="responsive table table-hover" id="users-datatable" data-source="<%= admin_users_path(format: :json) %>">
+  <table class="responsive nowrap table table-hover" id="users-datatable" style="width:100%" data-source="<%= admin_users_path(format: :json) %>">
     <thead class="thead-dark">
       <tr>
         <th>ID</th>
