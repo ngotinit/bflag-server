@@ -4,8 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'kaminari'
 gem 'rails', '~> 5.2.0'
+
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use Puma as the app server
@@ -79,6 +79,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Bootstrap
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+
+# Pagination
+gem 'kaminari'
 
 # Simple form
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
