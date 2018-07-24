@@ -1,22 +1,44 @@
 table {
-    margin-top: 4em;
+
+    margin-top: 1em;
+
 }
 
 @media only screen and (min-width: 1280px) {
+
     .table-responsive {
+
         display: table;
+
     }
+
 }
 
 @media only screen and (min-width: 576px) {
+
     .search-form {
+
         float: right;
+
     }
+
 }
 
 @media only screen and (max-width: 575px) {
 
     table {
+
         margin-top: 1em;
+
     }
+
+    #spacing2
+
+    {
+
+        margin-bottom: 2%;
+
+    }
+
 }
+
