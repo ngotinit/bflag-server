@@ -9,6 +9,8 @@ module ApplicationCable
     private
 
     def find_verified_user(token)
+      return reject_unauthorized_connection if token.nil?
+
       if verified_user = User.get_user_from_token(token)
         verified_user
       else
