@@ -1,17 +1,20 @@
 
 <div class="container">
-  <h1> Update a  user</h1>
-  <%= simple_form_for @user ,url:admin_user_path,:method => :patch  do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :username %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.button :submit, class: "btn btn-primary btn-md" %>
-<% end %>
- <div style=" padding-top: 1%">
+  <div class="text2">
+    <h1> Update a  user</h1>
+    <%= simple_form_for @user ,url:admin_user_path,:method => :patch  do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :username %>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
+    <%= f.button :submit, class: "btn btn-primary btn-md" %>
+    <% end %>
+    <div style=" padding-top: 1%">
         <%= link_to "Back to Index", admin_users_path, class:"btn btn-info", method: :get %>
     </div>
+  </div>
 </div>
 
 

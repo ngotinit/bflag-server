@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :username,
             length: { minimum: 6 },
             uniqueness: { case_sensitive: false }
-
+  validates :password, confirmation: true
   has_many :messages
 
   def self.get_user_from_token(token)
