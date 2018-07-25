@@ -31,7 +31,7 @@ class UserDatatable < AjaxDatatablesRails::Base
         show:       link_to('Show', admin_user_path(record), class: 'btn btn-primary'),
         edit:       link_to('Edit', edit_admin_user_path(record), class: 'btn btn-warning'),
         delete:     link_to('Delete', admin_user_path(record), method: :delete,
-                            data: { confirm: true }, class: 'btn btn-danger')
+                            data: { confirm: 'Are you sure?' }, class: 'btn btn-danger')
       }
     end
   end
