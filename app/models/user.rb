@@ -43,4 +43,7 @@ class User < ApplicationRecord
   def new_token
     SecureRandom.hex(16)
   end
+
 end
+
+
