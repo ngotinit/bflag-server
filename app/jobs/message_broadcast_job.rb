@@ -11,6 +11,10 @@ class MessageBroadcastJob < ApplicationJob
   private
 
   def render_message(message)
-    message.to_json
+    {
+      user: message.user.username,
+      room_id: message.room_id,
+      content: message.content
+    }.to_json
   end
 end
