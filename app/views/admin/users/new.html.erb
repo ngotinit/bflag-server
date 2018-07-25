@@ -7,11 +7,14 @@
   <%= f.input :username %>
   <%= f.input :email %>
   <%= f.input :password %>
-  <%= f.simple_fields_for :avatar do |img| %>
-    <p>
-    <%= img.file_field :avatar %>
-    </p>
-  <% end %>
+  <div class="avatar form-group">
+    <%= f.simple_fields_for :avatar do |img| %>
+      <%= render 'avatar_fields', f: img %>
+    <% end %>
+    <%= link_to_add_association "Add avatar", f, :avatar,
+      force_non_association_create: true,
+      class: 'btn btn-secondary' %>
+  </div>
   <%= f.button :submit, class: "btn btn-primary btn-md" %>
 <% end %>
 </div>

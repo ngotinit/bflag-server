@@ -54,7 +54,7 @@ class Admin::UsersController < ApplicationController
       :first_name,
       :last_name,
       :password,
-      :avatar
+      avatar_attributes: %i[id avatar_file _destroy]
     )
   end
 
