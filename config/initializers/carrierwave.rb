@@ -9,7 +9,6 @@ CarrierWave.configure do |config|
 
   config.fog_credentials = {
     provider:                         'Google',
-    google_project:                   'flash-span-211304',
     google_storage_access_key_id:     ENV['google_storage_access_key_id'],
     google_storage_secret_access_key: ENV['google_storage_secret_access_key']
   }
