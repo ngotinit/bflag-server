@@ -1,7 +1,6 @@
 table {
 
     margin-top: 1em;
-
 }
 
 @media only screen and (min-width: 1280px) {
@@ -9,9 +8,7 @@ table {
     .table-responsive {
 
         display: table;
-
     }
-
 }
 
 @media only screen and (min-width: 576px) {
@@ -19,9 +16,11 @@ table {
     .search-form {
 
         float: right;
-
     }
+    #spacing2 {
 
+        margin-bottom: 1%;
+    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -29,16 +28,19 @@ table {
     table {
 
         margin-top: 1em;
-
     }
+    #spacing2 {
 
-    #spacing2
-
+        margin-bottom: 1%;
+    }
+    #users-datatable_length {
+        text-align: left
+    }
+    #users-datatable_filter {
+        text-align: left
+    }
+    .custom-select
     {
-
-        margin-bottom: 2%;
-
+        margin-left: 10%;
     }
-
 }
-
