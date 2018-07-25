@@ -88,14 +88,11 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 # PostgreSQL
 gem 'pg', '~> 1.0.0'
 
-# Cocoon for nested attributes
-gem 'cocoon'
-
 # Datatable
 gem 'jquery-datatables', '~> 1.10', '>= 1.10.19'
 gem 'ajax-datatables-rails', '~> 0.4.3'
 
 # Upload Image
+gem 'fog', '~> 2.0'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'mini_magick', '~> 4.8'
-gem 'fog', '~> 2.0'
