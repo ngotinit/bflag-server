@@ -17,6 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+gem 'pry'
+
 # Grape for API-only application
 gem 'grape', '~> 1.0', '>= 1.0.3'
 gem 'grape-entity', '~> 0.7.1'
@@ -86,6 +88,14 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 # PostgreSQL
 gem 'pg', '~> 1.0.0'
 
+# Cocoon for nested attributes
+gem 'cocoon'
+
 # Datatable
 gem 'jquery-datatables', '~> 1.10', '>= 1.10.19'
 gem 'ajax-datatables-rails', '~> 0.4.3'
+
+# Upload Image
+gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'mini_magick', '~> 4.8'
+gem 'fog', '~> 2.0'

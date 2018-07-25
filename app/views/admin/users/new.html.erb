@@ -1,14 +1,4 @@
-
 <div class="container">
   <h1> Create a new user</h1>
-  <%= simple_form_for @user ,url:admin_users_path do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :username %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <%= f.button :submit, class: "btn btn-primary btn-md" %>
-<% end %>
+  <%= render "user_form" %>
 </div>
-
-

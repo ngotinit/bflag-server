@@ -8,7 +8,10 @@ class User < ApplicationRecord
             length: { minimum: 6 },
             uniqueness: { case_sensitive: false }
 
-  has_many :messages
+  has_one :avatar, inverse_of: :user, dependent: :destroy
+  has_many :messages, dependent: :destroy
+
+  accepts_nested_attributes_for :avatar, allow_destroy: true
 
   def self.get_user_from_token(token)
     User.find_by(auth_token: token)

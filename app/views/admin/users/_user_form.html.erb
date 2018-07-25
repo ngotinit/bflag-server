@@ -1,0 +1,14 @@
+<%= simple_form_for [:admin, @user] do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :username %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <div class="form-group">
+    <%= f.simple_fields_for :avatar do |img| %>
+      <%= img.label :avatar %><br />
+      <%= img.file_field :avatar_file %>
+    <% end %>
+  </div>
+  <%= f.button :submit, class: "btn btn-primary btn-md" %>
+<% end %>
