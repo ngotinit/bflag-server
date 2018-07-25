@@ -17,6 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+gem 'pry'
+
 # Grape for API-only application
 gem 'grape', '~> 1.0', '>= 1.0.3'
 gem 'grape-entity', '~> 0.7.1'
