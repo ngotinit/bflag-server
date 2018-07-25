@@ -7,6 +7,7 @@ $ ->
     processing: true
     serverSide: true
     scrollX: true
+    stateSave: true
     ajax: $('#users-datatable').data('source')
     lengthMenu: [[5, 10, 15, 25], [5, 10, 15, 25]]
     pagingType: 'full_numbers'
