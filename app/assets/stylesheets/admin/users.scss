@@ -1,9 +1,8 @@
 table {
-
     margin-top: 1em;
 }
 
-.btn-primary{
+.btn-primary {
     padding-left: 5%;
 }
 
@@ -11,46 +10,43 @@ table {
 {
     margin: auto;
     width:50%;
-    font-weight:bold
+    font-weight: bold;
 }
+
 @media only screen and (min-width: 1280px) {
-
     .table-responsive {
-
         display: table;
     }
 }
 
 @media only screen and (min-width: 576px) {
-
     .search-form {
-
         float: right;
     }
-    #spacing2 {
 
+    #spacing2 {
         margin-bottom: 1%;
     }
 }
 
 @media only screen and (max-width: 575px) {
-
     table {
-
         margin-top: 1em;
     }
-    #spacing2 {
 
+    #spacing2 {
         margin-bottom: 1%;
     }
+
     #users-datatable_length {
         text-align: left
     }
+
     #users-datatable_filter {
         text-align: left
     }
-    .custom-select
-    {
+
+    .custom-select {
         margin-left: 10%;
     }
 }
