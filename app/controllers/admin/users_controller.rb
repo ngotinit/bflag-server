@@ -20,11 +20,12 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-   @user=User.find(params[:id])
+   @user = User.find(params[:id])
+
    if @user.update(user_params)
      redirect_to admin_users_path
    else
-      render 'edit'
+      render :edit
    end
   end
 
@@ -55,6 +56,7 @@ class Admin::UsersController < ApplicationController
       :first_name,
       :last_name,
       :password,
+      :password_confirmation,
       avatar_attributes: %i[id avatar_file _destroy]
     )
   end

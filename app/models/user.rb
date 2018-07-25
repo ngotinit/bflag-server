@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :avatar, allow_destroy: true
 
+  validates :password, confirmation: true
+
   def self.get_user_from_token(token)
     User.find_by(auth_token: token)
   end
