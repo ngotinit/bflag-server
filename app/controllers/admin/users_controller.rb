@@ -11,7 +11,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def new
-   @user=User.new
+   @user = User.new
+   @user.build_avatar
   end
 
   def edit
@@ -32,7 +33,7 @@ class Admin::UsersController < ApplicationController
     if @user.save
       redirect_to admin_users_path
     else
-      render 'new'
+      render :new
     end
   end
 

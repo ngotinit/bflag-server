@@ -1,22 +1,4 @@
-
 <div class="container">
   <h1> Create a new user</h1>
-  <%= simple_form_for @user, url: admin_users_path do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :username %>
-  <%= f.input :email %>
-  <%= f.input :password %>
-  <div class="avatar form-group">
-    <%= f.simple_fields_for :avatar do |img| %>
-      <%= render 'avatar_fields', f: img %>
-    <% end %>
-    <%= link_to_add_association "Add avatar", f, :avatar,
-      force_non_association_create: true,
-      class: 'btn btn-secondary' %>
-  </div>
-  <%= f.button :submit, class: "btn btn-primary btn-md" %>
-<% end %>
+  <%= render "user_form" %>
 </div>
-
-

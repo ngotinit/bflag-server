@@ -8,7 +8,7 @@ class User < ApplicationRecord
             length: { minimum: 6 },
             uniqueness: { case_sensitive: false }
 
-  has_one :avatar, dependent: :destroy
+  has_one :avatar, inverse_of: :user, dependent: :destroy
   has_many :messages, dependent: :destroy
 
   accepts_nested_attributes_for :avatar, allow_destroy: true
