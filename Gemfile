@@ -94,4 +94,5 @@ gem 'ajax-datatables-rails', '~> 0.4.3'
 
 # Upload Image
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+gem 'mini_magick', '~> 4.8'
 gem 'fog', '~> 2.0'
