@@ -1,4 +1,5 @@
 class Avatar < ApplicationRecord
-  belongs_to :user
   mount_uploader :avatar, AvatarUploader
+  attr_accessor :avatar
+  belongs_to :user
 end
