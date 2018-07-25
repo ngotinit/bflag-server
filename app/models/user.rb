@@ -8,6 +8,7 @@ class User < ApplicationRecord
             length: { minimum: 6 },
             uniqueness: { case_sensitive: false }
 
+  has_one :avatar
   has_many :messages
 
   def self.get_user_from_token(token)
