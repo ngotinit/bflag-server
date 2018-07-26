@@ -4,14 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable
 
+  mount_uploader :profile_image, ProfileImageUploader
+
   validates :username,
             length: { minimum: 6 },
             uniqueness: { case_sensitive: false }
 
-  has_one :avatar, inverse_of: :user, dependent: :destroy
   has_many :messages, dependent: :destroy
 
-  accepts_nested_attributes_for :avatar, allow_destroy: true
 
   validates :password, confirmation: true
 

@@ -1,4 +1,4 @@
-class AvatarUploader < CarrierWave::Uploader::Base
+class ProfileImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   def store_dir
@@ -6,7 +6,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url(*args)
-    "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    'fallback/' + [version_name, 'default_image.png'].compact.join('_')
   end
 
   version :thumb do
@@ -22,6 +22,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "#{model.class.to_s.downcase}_#{model.user_id}"
+    "#{model.username}_profile_image"
   end
 end

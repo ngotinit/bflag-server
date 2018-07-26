@@ -11,23 +11,21 @@ class Admin::UsersController < ApplicationController
   end
 
   def new
-   @user = User.new
-   @user.build_avatar
+    @user = User.new
   end
 
   def edit
-     @user = User.find(params[:id])
-     @user.build_avatar if @user.avatar.nil?
+    @user = User.find(params[:id])
   end
 
   def update
-   @user = User.find(params[:id])
+    @user = User.find(params[:id])
 
-   if @user.update(user_params)
-     redirect_to admin_users_path
-   else
+    if @user.update(user_params)
+      redirect_to admin_users_path
+    else
       render :edit
-   end
+    end
   end
 
   def create
@@ -40,8 +38,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
-   end
+    @user = User.find(params[:id])
+  end
 
   def destroy
     @user.destroy
@@ -57,8 +55,7 @@ class Admin::UsersController < ApplicationController
       :first_name,
       :last_name,
       :password,
-      :password_confirmation,
-      avatar_attributes: %i[id avatar_file _destroy]
+      :profile_image
     )
   end
 

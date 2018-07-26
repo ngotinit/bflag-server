@@ -4,12 +4,14 @@
   <%= f.input :username %>
   <%= f.input :email %>
   <%= f.input :password %>
+
   <div class="form-group">
-    <%= f.simple_fields_for :avatar do |img| %>
-      <%= img.label :avatar %><br />
-      <%= img.file_field :avatar_file %>
-      <%= image_tag(@user.avatar.avatar_file.url(:thumb)) if @user.avatar.avatar_file? %>
-    <% end %>
+    <%= f.label :profile_image %><br />
+    <%= f.file_field :profile_image %>
+    <%= image_tag(@user.profile_image.url(:thumb)) if @user.profile_image? %>
   </div>
-  <%= f.button :submit, class: "btn-primary" %>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn-primary" %>
+  </div>
 <% end %>
