@@ -2,12 +2,18 @@ class Admin::UsersController < ApplicationController
   before_action :require_admin_log_in
   before_action :set_user, only: %i[show destroy]
 
+  protect_from_forgery unless: -> { request.format.json? }
+
   def index
     # @users = User.search(params[:search]).order('id').page(params[:page]).per(5)
-    respond_to do |format|
-      format.html
-      format.json { render json: UserDatatable.new(view_context) }
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: UserDatatable.new(view_context) }
+    # end
+  end
+
+  def datatable
+    render json: UserDatatable.new(view_context)
   end
 
   def new

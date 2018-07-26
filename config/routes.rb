@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   # CMS
+  concern :with_datatable do
+    post 'datatable', on: :collection
+  end
+
   namespace :admin do
     root to: 'sessions#new'
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
     delete '/', to: 'sessions#destroy'
 
-    resources :users # only: %i[index show destroy]
+    resources :users, concerns: [:with_datatable]
   end
 
   # API Endpoints
