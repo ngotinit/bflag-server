@@ -21,7 +21,7 @@ class MessageBroadcastJob < ApplicationJob
         content: message.content,
         img_url: nil
       },
-      time: message.created_at
+      time: message.created_at.localtime
     }.to_json
   end
 end
