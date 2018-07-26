@@ -6,45 +6,59 @@
   <div class="row">
     <div class="col-md-3">
       <div class="avatar">
-        <% if @user.profile_image? %>
+        <a data-toggle="modal" data-target="#bigProfileImage">
           <%= image_tag @user.profile_image.url(:preview), class: 'img-fluid' %>
-        <% else %>
-          <%= image_tag @user.profile_image.default_url(:preview), class: 'img-fluid' %>
-        <% end %>
+        </a>
       </div>
     </div>
 
     <div class="col-md-9">
       <h2>Profile Info</h2>
 
-      <table class="table table-hover" style="background-color: #f8f9fa;margin-top:1rem">
+      <table class="table table-hover">
         <tbody>
           <tr>
-            <td>First Name</td>
-            <td><%= @user.first_name %></td>
+            <td><h6>First Name</h6></td>
+            <td class="text-gray"><%= @user.first_name %></td>
           </tr>
 
           <tr>
-            <td>Last Name</td>
-            <td><%= @user.last_name %></td>
+            <td><h6>Last Name</h6></td>
+            <td class="text-gray"><%= @user.last_name %></td>
           </tr>
 
           <tr>
-            <td>Username</td>
-            <td><%= @user.username %></td>
+            <td><h6>Username</h6></td>
+            <td class="text-gray"><%= @user.username %></td>
           </tr>
 
           <tr>
-            <td>Email</td>
-            <td><%= @user.email %></td>
+            <td><h6>Email</h6></td>
+            <td class="text-gray"><%= @user.email %></td>
           </tr>
 
           <tr>
-            <td>Day registered</td>
-            <td><%= @user.created_at.localtime.strftime('%H:%M:%S %d/%m/%Y') %></td>
+            <td><h6>Day registered</h6></td>
+            <td class="text-gray"><%= @user.created_at.localtime.strftime('%H:%M:%S %d/%m/%Y') %></td>
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="bigProfileImage" tabindex="-1" role="dialog" aria-labelledby="profileImageLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileImageLabel">Profile Image</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= image_tag(@user.profile_image.url, class: 'img-fluid') %>
+      </div>
     </div>
   </div>
 </div>

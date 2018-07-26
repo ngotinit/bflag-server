@@ -1,52 +1,57 @@
 table {
-    margin-top: 1em;
-}
+  margin-top: 1em;
 
-.admin-form {
-  width: 50%;
-  margin: auto;
-  margin-top: 20px;
-
-  .form-header {
-    text-transform: uppercase;
-    text-align: center;
+  .text-gray {
+    color: #4e4e4e;
   }
 }
 
+.avatar {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+}
 @media only screen and (min-width: 1280px) {
-    .table-responsive {
-        display: table;
-    }
+  .table-responsive {
+    display: table;
+  }
 }
 
 @media only screen and (min-width: 576px) {
-    .search-form {
-        float: right;
-    }
+  .search-form {
+    float: right;
+  }
 
-    #spacing2 {
-        margin-bottom: 1%;
-    }
+  #spacing2 {
+    margin-bottom: 1%;
+  }
 }
 
 @media only screen and (max-width: 575px) {
-    table {
-        margin-top: 1em;
-    }
+  table {
+    margin-top: 1em;
+  }
 
-    #spacing2 {
-        margin-bottom: 1%;
-    }
+  #spacing2 {
+    margin-bottom: 1%;
+  }
 
-    #users-datatable_length {
-        text-align: left
-    }
+  #users-datatable_length {
+    text-align: left
+  }
 
-    #users-datatable_filter {
-        text-align: left
-    }
+  #users-datatable_filter {
+    text-align: left
+  }
 
-    .custom-select {
-        margin-left: 10%;
-    }
+  .custom-select {
+    margin-left: 10%;
+  }
 }

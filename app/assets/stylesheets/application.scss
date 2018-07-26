@@ -18,7 +18,11 @@
 @import 'admin/users';
 @import "datatables";
 
+body {
+  background-color: #f9f9f9;
+}
+
 .container {
-  margin-top: 30px !important;
+  // margin-top: 30px !important;
   margin-bottom: 30px !important;
 }
