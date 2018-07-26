@@ -8,7 +8,8 @@
     <%= f.simple_fields_for :avatar do |img| %>
       <%= img.label :avatar %><br />
       <%= img.file_field :avatar_file %>
+      <%= image_tag(@user.avatar.avatar_file.url(:thumb)) if @user.avatar.avatar_file? %>
     <% end %>
   </div>
-  <%= f.button :submit, class: "btn btn-primary btn-md" %>
+  <%= f.button :submit, class: "btn-primary" %>
 <% end %>

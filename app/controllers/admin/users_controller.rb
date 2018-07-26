@@ -16,7 +16,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
-     @user=User.find(params[:id])
+     @user = User.find(params[:id])
+     @user.build_avatar if @user.avatar.nil?
   end
 
   def update
@@ -39,7 +40,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-      @user=User.find(params[:id])
+      @user = User.find(params[:id])
    end
 
   def destroy
