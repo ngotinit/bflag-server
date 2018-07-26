@@ -16,5 +16,9 @@
 @import 'common_form';
 @import 'admin/sessions';
 @import 'admin/users';
-
 @import "datatables";
+
+.container {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}

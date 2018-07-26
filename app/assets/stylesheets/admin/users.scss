@@ -2,14 +2,15 @@ table {
     margin-top: 1em;
 }
 
-.btn-primary {
-    padding-left: 5%;
-}
+.admin-form {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
 
-.text2 {
-    margin: auto;
-    width:50%;
-    font-weight: bold;
+  .form-header {
+    text-transform: uppercase;
+    text-align: center;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
