@@ -7,7 +7,7 @@ module API
         end
 
         with_options(format_with: :datetime) do
-          expose :created_at
+          expose :created_at, as: :time
         end
         expose :user, as: :friend, using: UserEntity
         expose :content
