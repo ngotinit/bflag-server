@@ -59,6 +59,7 @@ module API
           optional :first_name, type: String
           optional :last_name, type: String
           optional :username, type: String
+          optional :profile_image, type: File
         end
         put 'edit' do
           authenticate_token!
