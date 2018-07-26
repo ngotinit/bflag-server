@@ -9,11 +9,9 @@ class User < ApplicationRecord
   validates :username,
             length: { minimum: 6 },
             uniqueness: { case_sensitive: false }
+  validates :password, confirmation: true
 
   has_many :messages, dependent: :destroy
-
-
-  validates :password, confirmation: true
 
   def self.get_user_from_token(token)
     User.find_by(auth_token: token)
@@ -32,6 +30,7 @@ class User < ApplicationRecord
   end
 
   def generate_token
+    self.auth_token = nil
     loop do
       self.auth_token = new_token
       break unless User.exists?(auth_token: auth_token)

@@ -6,9 +6,8 @@ class RoomChannel < ApplicationCable::Channel
   def unsubscribed; end
 
   def send_data(args)
-    content = args['content']
     current_user.messages.create!(
-      content: content,
+      content: args['content'],
       room_id: params[:room_id]
     )
   end
