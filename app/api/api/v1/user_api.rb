@@ -42,8 +42,9 @@ module API
           requires :password, type: String
         end
         post 'sign_up' do
-          User.create!(declared(params))
-          present({ status: 'ok' }, 200)
+          user = User.create!(declared(params))
+          user.generate_token
+          present({ status: 'ok', token: user.auth_token }, 200)
         end
 
         desc "Edit user's profile", {

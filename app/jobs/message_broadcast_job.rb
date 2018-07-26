@@ -12,9 +12,16 @@ class MessageBroadcastJob < ApplicationJob
 
   def render_message(message)
     {
-      user: message.user.username,
-      room_id: message.room_id,
-      content: message.content
+      friend: {
+        email: message.user.email,
+        username: message.user.username,
+        profile_image: message.user.profile_image.url
+      },
+      message: {
+        content: message.content,
+        img_url: nil
+      },
+      time: message.created_at
     }.to_json
   end
 end

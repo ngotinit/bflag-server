@@ -4,12 +4,9 @@ module API
       class UserEntity < Grape::Entity
         expose :email
         expose :username
-        expose :full_name do |instance, options|
-          "#{instance.first_name} #{instance.last_name}"
-        end
-
-        # expose :first_name
-        # expose :last_name
+        expose :first_name
+        expose :last_name
+        expose :profile_image
       end
     end
   end
