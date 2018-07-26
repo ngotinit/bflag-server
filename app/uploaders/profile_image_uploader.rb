@@ -22,6 +22,6 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    "#{model.username}_profile_image"
+    "#{model.username}_profile_image" + File.extname(super)
   end
 end
