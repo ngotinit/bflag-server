@@ -13,7 +13,7 @@ module API
         }
         get do
           authenticate_token!
-          present current_user, with: Entities::UserEntity
+          present current_user, with: Entities::UserEntity, format: 'full'
         end
 
         params do
