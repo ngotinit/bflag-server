@@ -40,6 +40,7 @@ module API
           requires :username, type: String
           requires :email, type: String
           requires :password, type: String
+          optional :profile_image, type: File
         end
         post 'sign_up' do
           user = User.create!(declared(params))
