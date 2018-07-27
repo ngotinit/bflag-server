@@ -77,6 +77,10 @@ class User < ApplicationRecord
   def send_password_reset_mail
     UserMailer.reset_password(self).deliver_now
   end
+  #
+  # def online?
+  #   Redis.new.get("user_#{id}_online").present?
+  # end
 
   private
 
