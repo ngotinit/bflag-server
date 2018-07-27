@@ -4,8 +4,8 @@ class Message < ApplicationRecord
 
   after_create_commit :broadcast_message
 
-  def self.get_history(size=10, offset)
-    all.order(created_at: :desc).limit(size).offset(offset)
+  def self.get_history(room_id, offset, size=10)
+    where(room_id: room_id).order(created_at: :desc).limit(size).offset(offset)
   end
 
   private

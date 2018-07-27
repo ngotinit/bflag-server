@@ -25,13 +25,10 @@ module API
           }
         }
       }
-      params do
-        requires :offset, type: Integer
-      end
-      post '/rooms/:id' do
-        declared_params = declared(params)
-        offset = declared_params[:offset]
-        present Message.get_history(offset), with: Entities::MessageEntity
+      get '/rooms/:id/:offset' do
+        room_id = params[:id]
+        offset = params[:offset]
+        present Message.get_history(room_id, offset), with: Entities::MessageEntity
       end
     end
   end
