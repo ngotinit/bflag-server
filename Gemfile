@@ -26,9 +26,6 @@ gem 'grape-swagger'
 gem 'grape-swagger-rails'
 gem 'rack-cors', require: 'rack/cors'
 
-# Devise
-gem 'devise', '~> 4.4', '>= 4.4.3'
-
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
