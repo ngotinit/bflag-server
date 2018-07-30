@@ -8,6 +8,7 @@ $(document).on 'turbolinks:load', ->
     serverSide: true
     scrollX: true
     stateSave: true
+    spans: true
     ajax:
       url: $('#users-datatable').data('source')
       type: 'POST'

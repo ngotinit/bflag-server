@@ -40,5 +40,4 @@ class UserDatatable < AjaxDatatablesRails::Base
     # insert query here
     User.all
   end
-
 end
