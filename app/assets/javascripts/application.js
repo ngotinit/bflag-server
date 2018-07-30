@@ -16,5 +16,5 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-//= require datatables
 //= require_tree .
+//= require datatables

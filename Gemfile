@@ -47,7 +47,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do
   gem 'redis', '~> 4.0'
@@ -89,8 +88,10 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem 'pg', '~> 1.0.0'
 
 # Datatable
-gem 'jquery-datatables', '~> 1.10', '>= 1.10.19'
-gem 'ajax-datatables-rails', '~> 0.4.3'
+gem 'rails-assets-jquery','3.3.1', source: "https://rails-assets.org"
+gem 'rails-assets-datatables','1.10.16'
+#gem 'jquery-datatables', '~> 1.10', '>= 1.10.19'
+#gem 'ajax-datatables-rails', '~> 0.4.3'
 
 # Upload Image
 gem 'fog', '~> 2.0'

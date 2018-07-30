@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
   # Action Cable
   mount ActionCable.server => '/cable'
+  get 'admin/users/room_chat'
 end

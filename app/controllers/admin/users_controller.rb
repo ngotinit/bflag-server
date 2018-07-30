@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    # @users = User.search(params[:search]).order('id').page(params[:page]).per(5)
+    @users = User.all
     # respond_to do |format|
     #   format.html
     #   format.json { render json: UserDatatable.new(view_context) }
