@@ -9,7 +9,6 @@ class User < ApplicationRecord
   validates :username,
             length: { minimum: 6 },
             uniqueness: { case_sensitive: false }
-  validates :password, confirmation: true
 
   has_many :messages, dependent: :destroy
 

@@ -28,7 +28,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to admin_users_path
+      redirect_to admin_user_path(@user)
     else
       render :edit
     end
