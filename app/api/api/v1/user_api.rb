@@ -16,6 +16,19 @@ module API
           present current_user, with: Entities::UserEntity, format: 'full'
         end
 
+        desc 'Verify the token for client'
+        params do
+          requires :Token, type: String
+        end
+        post 'auth' do
+          valid_user = User.get_user_from_token(declared(params)[:Token])
+          if valid_user
+            present({ status: 'ok' }, 200)
+          else
+            present({ error: '401 Token invalid' }, 401)
+          end
+        end
+
         params do
           requires :email, type: String
           requires :password, type: String
