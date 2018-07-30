@@ -19,6 +19,7 @@ module API
         params do
           requires :email, type: String
           requires :reset_code, type: String
+          optional :password, type: String
         end
         post '/auth' do
           declared_params = declared(params)
@@ -34,20 +35,13 @@ module API
 
           if user.valid_reset_code?(declared_params[:reset_code])
             present({ status: 'ok' }, 200)
+
+            if declared_params[:password].present?
+              user.update!(password: declared_params[:password])
+            end
           else
             present({ error: 'Invalid reset password code' }, )
           end
-        end
-
-        params do
-          requires :email, type: String
-          requires :password, type: String
-        end
-        put '/edit' do
-          declared_params = declared(params)
-          user = User.find_by(email: declared_params[:email])
-          user.update!(password: declared_params[:password])
-          present({ status: 'ok' }, 200)
         end
       end
     end
