@@ -60,7 +60,7 @@ class User < ApplicationRecord
   end
 
   def require_password?
-    !password.nil? || !password_confirmation.nil?
+    new_record? || !password.empty? || !password_confirmation.empty?
   end
 
   def check_password

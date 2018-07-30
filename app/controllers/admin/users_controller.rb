@@ -61,6 +61,7 @@ class Admin::UsersController < ApplicationController
       :first_name,
       :last_name,
       :password,
+      :password_confirmation,
       :profile_image
     )
   end
