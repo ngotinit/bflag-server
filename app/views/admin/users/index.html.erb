@@ -1,6 +1,6 @@
-<div class="container" >
+<div class="container content" >
   <div class="index">
-    <%= link_to icon('fas', 'plus') + " Create", new_admin_user_path, class:"btn btn-info", id: "spacing2"%>
+    <%= link_to icon('fas', 'plus'), new_admin_user_path, class:"btn btn-info btn-floating", id: "spacing2"%>
   </div>
 
   <table class="responsive nowrap table table-hover" id="users-datatable" style="width:100%" data-source="<%= datatable_admin_users_path(format: :json) %>">

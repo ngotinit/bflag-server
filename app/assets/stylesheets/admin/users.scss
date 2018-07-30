@@ -1,101 +1,96 @@
+.content {
+  margin-top: 40px;
+}
+
 table {
-    margin-top: 1em;
-
-    .text-gray {
-        color: #4e4e4e;
-    }
+  .text-gray {
+    color: #4e4e4e;
+  }
 }
-
-#pback {
-    border-radius: 50%;
-}
-
-#pback {
-
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    cursor: pointer;
-    border-radius: 50%;
-    color: #0f0e0e;
-    background-color: #d1d1d1;
-    border-color: #8f6e6e;
-}
-
-#pback:hover {
-    background-color: #555;
-}
-
 
 .index {
-    padding-top: 1%
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  z-index: 99;
+  cursor: pointer;
+
+  .btn {
+    border-radius: 50%;
+  }
+
+  .btn-floating:hover {
+    background-color: #fff;
+    color: #555;
+    border-color: #555;
+  }
 }
 
-.avatar {
-    width: 90%;
-    margin: auto;
-    padding: 20px;
 
-    img {
-        display: block;
-        width: 189px;
-        height: 185px;
-        border: 7px solid #bfbfbfcc;
-        border-radius: 4px;
-        overflow: hidden;
-    }
+.avatar {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+
+  img {
+    display: block;
+    width: 189px;
+    height: 185px;
+    border: 7px solid #bfbfbfcc;
+    border-radius: 4px;
+    overflow: hidden;
+  }
 }
 
 @media only screen and (min-width: 1280px) {
-    .table-responsive {
-        display: table;
-    }
+  .table-responsive {
+    display: table;
+  }
 }
 
 @media only screen and (min-width: 576px) {
-    .search-form {
-        float: right;
-    }
+  .search-form {
+    float: right;
+  }
 
-    #spacing2 {
-        margin-bottom: 1%;
-    }
+  #spacing2 {
+    margin-bottom: 1%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-    table {
-        margin-top: 1em;
-    }
+  table {
+    margin-top: 1em;
+  }
 
-    #spacing2 {
-        margin-bottom: 1%;
-    }
+  #spacing2 {
+    margin-bottom: 1%;
+  }
 
-    #users-datatable_length {
-        text-align: left
-    }
+  #users-datatable_length {
+    text-align: left
+  }
 
-    #users-datatable_filter {
-        text-align: left
-    }
+  #users-datatable_filter {
+    text-align: left
+  }
 
-    .custom-select {
-        margin-left: 10%;
-    }
+  .custom-select {
+    margin-left: 10%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
 
-    .avatar {
-        width: 100%;
-        margin: auto;
-        padding: 10px;
-    }
+  .avatar {
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    #res_infor {
-        padding-left: 11%
-    }
+  #res_infor {
+    padding-left: 11%
+  }
 }
