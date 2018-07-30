@@ -10,6 +10,7 @@ module API
 
       mount API::V1::UserAPI
       mount API::V1::RoomAPI
+      mount API::V1::ResetPasswordAPI
     end
   end
 end
