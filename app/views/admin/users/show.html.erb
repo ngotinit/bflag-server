@@ -1,18 +1,15 @@
 <div class="container">
-  <div>
-    <%= link_to "Back to index", admin_users_path, class:"btn btn-info", method: :get %>
-  </div>
 
   <div class="row">
     <div class="col-md-3">
       <div class="avatar">
         <a data-toggle="modal" data-target="#bigProfileImage">
-          <%= image_tag @user.profile_image.url(:preview), class: 'img-fluid' %>
+          <%= image_tag @user.profile_image.url(:preview), class: 'media-object' %>
         </a>
       </div>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-9" id="res_infor">
       <h2>Profile Info</h2>
 
       <table class="table table-hover">
@@ -45,6 +42,8 @@
       </table>
     </div>
   </div>
+<div class="index">
+    <%= link_to "<", admin_users_path, class:"btn btn-info", id: "pback", method: :get %>
 </div>
 
 <div class="modal fade" id="bigProfileImage" tabindex="-1" role="dialog" aria-labelledby="profileImageLabel" aria-hidden="true">
@@ -62,3 +61,4 @@
     </div>
   </div>
 </div>
+
