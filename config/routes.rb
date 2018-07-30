@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     delete '/', to: 'sessions#destroy'
 
     resources :users, concerns: [:with_datatable]
+    resources :rooms, concerns: [:with_datatable]
   end
 
   # API Endpoints

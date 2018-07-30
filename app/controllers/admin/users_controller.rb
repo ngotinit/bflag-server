@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :require_admin_log_in
-  before_action :set_user, only: %i[show destroy]
+  before_action :set_user, only: %i[show edit update destroy]
 
   protect_from_forgery unless: -> { request.format.json? }
 
@@ -21,12 +21,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
-
     if @user.update(user_params)
       redirect_to admin_user_path(@user)
     else
@@ -44,7 +41,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def destroy
