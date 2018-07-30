@@ -60,4 +60,18 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_cable.url = 'ws://0.0.0.0:3000/cable'
   # config.action_cable.allowed_request_origins = [ 'http://localhost:3000', 'http://127.0.0.1:3000' ]
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :test
+  host = '0.0.0.0:3000'
+  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.smtp_settings = {
+    :address                => 'smtp.gmail.com',
+    :port                   => 587,
+    :domain                 => 'domain',
+    :user_name              => 'bflagapplication@gmail.com',
+    :password               => ENV('GMAIL_PASSWORD'),
+    :authentication         => 'plain',
+    :enable_starttls_auto   => true
+  }
 end
