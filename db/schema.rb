@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2018_07_23_025740) do
     t.string "password"
     t.string "profile_image"
     t.string "auth_token"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

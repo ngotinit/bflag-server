@@ -70,7 +70,7 @@ Rails.application.configure do
     :port                   => 587,
     :domain                 => 'domain',
     :user_name              => 'bflagapplication@gmail.com',
-    :password               => ENV('GMAIL_PASSWORD'),
+    :password               => 'vinova123',
     :authentication         => 'plain',
     :enable_starttls_auto   => true
   }

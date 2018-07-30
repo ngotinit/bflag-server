@@ -63,13 +63,19 @@ class User < ApplicationRecord
   end
 
   def create_reset_code
-    reset_code = generate_code
-    update_columns(reset_digest: digest_token(reset_code),
+    loop do
+      self.reset_code = ''
+      6.times { self.reset_code << SecureRandom.random_number(9).to_s }
+      self.reset_digest = digest_token(self.reset_code)
+      break unless User.exists?(reset_digest: self.reset_digest)
+    end
+
+    update_columns(reset_digest: self.reset_digest,
                    reset_sent_at: Time.zone.now)
   end
 
   def send_password_reset_mail
-    UserMailer.reset_password(self).deliver_later
+    UserMailer.reset_password(self).deliver_now
   end
 
   private

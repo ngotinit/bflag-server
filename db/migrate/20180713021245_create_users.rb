@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :password
       t.string :profile_image
       t.string :auth_token
+      t.string :reset_digest
+      t.datetime :reset_sent_at
       t.timestamps
     end
   end
