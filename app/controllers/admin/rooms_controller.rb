@@ -10,6 +10,7 @@ class Admin::RoomsController < ApplicationController
   end
 
   def show
+    @room =Room.find(params[:id])
   end
 
   def new
@@ -42,7 +43,7 @@ class Admin::RoomsController < ApplicationController
   end
 
   private
-  
+
   def room_params
     params.require(:room).permit(:name)
   end

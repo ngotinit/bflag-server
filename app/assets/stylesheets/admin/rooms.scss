@@ -1,3 +1,11 @@
 // Place all the styles related to the admin/Rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.ava-show
+ {
+    width: 85px;
+    height: 85px;
+    border: 4px solid #bca6a666;
+    border-radius: 50%;
+    overflow: hidden;
+}
