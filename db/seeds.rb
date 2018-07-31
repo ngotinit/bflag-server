@@ -9,7 +9,7 @@ User.create!(
   first_name: 'Quan',
   last_name: 'Nguyen',
   username: 'minhquan',
-  email: 'quan@example.com',
+  email: 'minhquan190597@gmail.com',
   password: 'vinova123'
 )
 
@@ -17,7 +17,7 @@ User.create!(
   first_name: 'Thien',
   last_name: 'Le',
   username: 'lethien',
-  email: 'thien@example.com',
+  email: 'leanhthienhcmut@gmail.com',
   password: 'vinova123'
 )
 
@@ -25,8 +25,6 @@ User.create!(
   first_name: 'Quynh',
   last_name: 'Do',
   username: 'doquynh',
-  email: 'quynh@example.com',
+  email: 'quynhdx0305@gmail.com',
   password: 'vinova123'
 )
-
-
